@@ -1,0 +1,42 @@
+<div class="margin container">
+    <div class="row justify-content-md-center">
+        <div class="col-md-auto"><br>
+            <h1 class="text-center">Survey Management</h1><br>
+<table class="table table-bordered table-striped table-hover text-center"> 
+    <tr>
+        <th>Survey Title</th>
+        <th>Description</th>
+        <th></th>
+        <th></th>
+        <th></th>
+    </tr>
+    <!-- loop through each survey -->
+        <tr *ngFor='let survey of surveys'>
+            <td>
+                {{survey.title}}
+            </td>
+            <td>
+                {{survey.description}}
+            </td>
+            <td>
+                <a href="/surveys/results/{{survey._id}}" class="btn btn-outline-dark btn-sm" role="button">Results</a>
+            </td>
+            <td>
+                <div *ngIf="userId==survey.createdBy || userRole==='admin'; else hideUpdate">
+                    <a href="/surveys/edit/{{survey._id}}" class="btn btn-outline-dark btn-sm" role="button">Update</a>
+                </div>
+                <ng-template #hideUpdate><div class="blank-space"></div></ng-template>
+            </td>
+            <td>
+                <div *ngIf="userId==survey.createdBy || userRole==='admin'; else hideDelete">
+                    <button (click)="deleteSurvey(survey._id)" class="btn btn-outline-danger btn-sm">Delete</button>
+                </div>
+                <ng-template #hideDelete><div class="blank-space"></div></ng-template>
+            </td>
+        </tr>
+</table>
+<a class="btn btn-dark btn-sm addBtn" href="/surveys/add">Add your own Survey</a>
+<br><br><br><br><br>
+</div>
+</div>
+</div>

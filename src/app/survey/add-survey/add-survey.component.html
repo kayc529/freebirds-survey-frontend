@@ -1,0 +1,40 @@
+<div class="margin container box">
+    <form id="new-survey-form">
+        <h1 class="text-center">{{title}}</h1>
+        <br>
+
+        <!-- Survey Title -->
+
+        <div class="row text-right gap">
+            <label class="col-3" for="title">Title</label>
+            <input class="col-7" type="text" id='title'/>
+        </div>
+        <!-- Survey Description -->
+        <div class="row text-right gap">
+            <label class="col-3" for="description">Description</label>
+            <input class="col-7" type="description" id='description'/>
+        </div>
+        <!-- Survey Questions -->
+        <div class="row text-right gap">
+            <label class="col-3" for="description">Question</label>
+            <input type="text" class='question'/>
+            <label class="col-2">Question Type</label>
+            <select class="type">
+                <option selected value="TEXT">Text</option>
+                <option value="T_F">True or False</option>
+                <option value="OPTIONS">Options</option>
+                <option value="CHECKBOX">Checkboxes</option>
+            </select>
+        </div>
+
+
+    </form>
+
+    <!-- Buttons -->
+    <div class="btnBox">
+    <button class="button btn btn-dark btn-sm" id="add-question-btn" (click)="addQuestion()">Add a question</button>
+    <button class="button btn btn-dark btn-sm" id="add-question-btn" (click)="addNewSurvey()">Submit</button>
+    <button class ="button btn btn-secondary btn-sm" (click)="back()">Back</button>
+    </div>
+
+</div>

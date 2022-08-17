@@ -1,0 +1,25 @@
+
+<div class="margin container">
+    <div class="row justify-content-md-center">
+        <div class="col-md-auto"><br>
+            <h1 class="text-center">Survey Results</h1><br>
+            <div class="box">
+            <h2>{{survey?.title}}</h2><br>
+            <!-- Loop through all the questions of the survey -->
+            <div *ngFor="let q of survey?.questions; let i = index">
+                <h4>{{q.question}}</h4>
+                <!-- loop through all the responses to get the answers for this question -->
+                <div *ngFor="let r of responses">
+                    <!-- Only show answer of that question -->
+                    <div *ngFor="let a of r.answers, let j=index">
+                        <p *ngIf="j===i">{{a}}</p>
+                    </div>
+                </div>
+            </div>
+                <br>
+            </div>
+            <a class="btn btn-secondary btn-sm" href="/survey-management">Back</a>
+<br><br><br><br><br>
+</div>
+</div>
+</div>

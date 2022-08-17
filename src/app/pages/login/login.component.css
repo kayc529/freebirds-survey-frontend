@@ -1,0 +1,17 @@
+#textboxid {
+    height:200px;
+    font-size:14pt;
+}
+
+.inputBox {
+    width: 400px;
+}
+
+.backBtn {
+    float: right;
+}
+
+.loginBtn {
+    margin-right: 15px; 
+    float: right;
+}

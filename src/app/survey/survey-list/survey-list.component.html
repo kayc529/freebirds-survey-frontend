@@ -1,0 +1,26 @@
+<div class="margin container">
+    <div class="row justify-content-md-center">
+        <div class="col-md-auto"><br>
+            <h1 class="text-center">Survey List</h1><br>
+<table class="table table-bordered table-striped table-hover text-center"> 
+    <tr>
+        <th>Survey Title</th>
+        <th>Description</th>
+        
+    </tr>
+    <!-- loop through each survey -->
+        <tr *ngFor='let survey of surveys'>
+            <td><a href="/surveys/do-survey/{{survey._id}}">
+                {{survey.title}}
+            </a></td>
+            <td>
+                {{survey.description}}
+            </td>
+           
+        </tr>
+</table>
+ 
+<br><br><br><br><br>
+</div>
+</div>
+</div>

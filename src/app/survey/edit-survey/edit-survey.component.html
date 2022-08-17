@@ -1,0 +1,46 @@
+<div class="margin container box">
+
+            <form id="new-survey-form">
+            <h1 class="text-center">{{title}}</h1><br>
+
+            <!-- Survey Title -->
+            <div class="row text-right">
+                <label for="title" class="col-3">Title</label>
+                <input type="text" id='title' value='{{survey?.title}}' class="col-8 titleBox"/>
+            </div>
+            <br>
+            <!-- Survey Description -->
+            <div class="row text-right">
+                <label for="description" class="col-3">Description</label>
+                <input type="description" id='description' value='{{survey?.description}}' class="col-8"/>
+            </div>
+            <br>
+            <!-- loop to show questions -->
+        
+            <div *ngFor="let q of survey?.questions" class="row text-right">
+                <label for="description" class="col-3">Question</label>
+                <input type="text" class='question col-4 Qbox gap' value='{{q.question}}'/>
+                <label class="col-2">Question Type</label>
+                <!-- Change the default selected according to the data in DB -->
+                <select class="type gap">
+                    <option value="TEXT" *ngIf="q.questionType === 'TEXT'; else notText" selected>Text</option>
+                    <ng-template #notText><option value="TEXT">Text</option></ng-template>
+                    <option value="T_F" *ngIf="q.questionType === 'T_F'; else notTF" selected>True or False</option>
+                    <ng-template #notTF><option value="T_F">True or False</option></ng-template>
+                    <option value="OPTIONS" *ngIf="q.questionType === 'OPTIONS'; else notOption" selected>Options</option>
+                    <ng-template #notOption><option value="OPTIONS">Options</option></ng-template>
+                    <option value="CHECKBOX" *ngIf="q.questionType === 'CHECKBOX'; else notTF" selected>Checkboxes</option>
+                    <ng-template #notTF><option value="CHECKBOX">Checkboxes</option></ng-template>
+                </select>
+
+            </div>
+        </form>
+    <!-- Buttons -->
+    <div class="btnBox">
+    <button class="btn btn-dark btn-sm button" id="add-question-btn" (click)="addQuestion()">Add a question</button>
+    <button class="btn btn-dark btn-sm button" id="add-question-btn" (click)="updateSurvey()">Update</button>
+    <a class="btn btn-secondary btn-sm button" href="/survey-management">Back</a>
+</div>
+<br><br><br><br><br>
+
+</div>

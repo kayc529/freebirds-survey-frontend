@@ -1,0 +1,55 @@
+<div class="margin container">
+    <div class="row justify-content-md-center">
+        <div class="col-md-auto"><br>
+    <form id="new-survey-form">
+        <div class="box">
+        <!-- Survey Title -->
+        <h2 class="title">{{survey?.title}}</h2>
+        <br>
+        <!-- Survey Description -->
+        <h3>{{survey?.description}}</h3>
+        <!-- Loop survey questions and show the corresponding question type -->
+        <div *ngFor="let q of survey?.questions; let i = index">
+            <!-- question -->
+            <p>{{q.question}}</p>
+            <!-- show different question type -->
+            <div [ngSwitch]="q.questionType">
+                <!-- question type is TEXT -->
+                <input *ngSwitchCase="'TEXT'" type="text" class="{{q.questionType}} {{i}}" />
+                <!-- question type is T_F -->
+                <div *ngSwitchCase="'T_F'">
+                    <input type="radio" name="t_f" value="True" class="{{q.questionType}} {{i}}">
+                    <label>True</label><br>
+                    <input type="radio" name="t_f" value="False" class="{{q.questionType}} {{i}}">
+                    <label>False</label><br>  
+                </div>
+                <!-- question type is OPTIONS -->
+                <div *ngSwitchCase="'OPTIONS'">
+                    <input type="radio" name="options" value="Positive" class="{{q.questionType}} {{i}}">
+                    <label>Positive</label><br>
+                    <input type="radio" name="options" value="Neutral" class="{{q.questionType}} {{i}}">
+                    <label>Neutral</label><br>
+                    <input type="radio" name="options" value="Negative" class="{{q.questionType}} {{i}}">
+                    <label>Negative</label><br>
+                </div>
+                <!-- question type is CHECKBOX -->
+                <div *ngSwitchCase="'CHECKBOX'">
+                    <input type="checkbox" name="checkbox" value="Twitter" class="{{q.questionType}} {{i}}">
+                    <label>Twitter</label><br>
+                    <input type="checkbox" name="checkbox" value="Facebook" class="{{q.questionType}} {{i}}">
+                    <label>Facebook</label><br>
+                    <input type="checkbox" name="checkbox" value="Instagram" class="{{q.questionType}} {{i}}">
+                    <label>Instagram</label><br>
+                </div>
+                <input *ngSwitchDefault type="text" class="{{q.questionType}} {{i}}" />
+            </div>
+            <br>
+        </div>
+        <!-- Buttons -->
+        <button id="add-question-btn" (click)="submitSurveyResponse()" class="btn btn-secondary btn-sm">Submit</button>
+    </div>
+    </form>
+    <br>
+</div>
+</div>
+</div>

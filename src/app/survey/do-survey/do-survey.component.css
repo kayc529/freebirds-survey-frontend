@@ -1,0 +1,13 @@
+.box{
+    background-color: #E8ECEF;
+    padding:50px;
+    border-radius: 5px;
+}
+
+.title{
+    background-color: #6C747E;
+    border-radius: 5px;
+    font-size: 300%;
+    padding: 10px 50px 10px 50px;
+    color:  #E8ECEF;
+}

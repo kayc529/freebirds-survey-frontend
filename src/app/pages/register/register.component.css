@@ -1,0 +1,16 @@
+.box {
+    width:400px;
+}
+
+.btnBack {
+    float: right;
+}
+
+.btnRegister {
+    margin-right: 20px; 
+    float: right;
+}
+
+.btnDiv {
+    margin-bottom: 30px;
+}

@@ -1,0 +1,10 @@
+.box{
+    background-color: #E8ECEF;
+    padding:50px;
+    border-radius: 5px;
+}
+
+.btn {
+    margin: 20px; 
+    float: right;
+}

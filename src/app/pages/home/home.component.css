@@ -1,0 +1,63 @@
+h4 {
+    color: #4B5EA2;
+}
+
+h5 {
+    color: #4B5EA2;
+}
+
+.h1Big {
+    color: #17294D;
+    font-size: 6em;
+}
+
+.h1Small {
+    color: #17294D;
+    font-size: 5em;
+}
+
+.h1Smaller {
+    color: #17294D;
+    font-size: 3em;
+}
+
+.takeSurvey {
+    margin: auto auto auto 200px;
+}
+
+.darkBG {
+ color: #A9A9A9;
+}
+
+#surveyImg {
+
+    padding-bottom: 100px;
+    width: 500;
+    height: 350;
+
+}
+
+.imgBox {
+    text-align:center;
+}
+
+#step1 {
+
+    width: 261px;
+    height: 208px;
+}
+
+#step2 {
+
+    width: 261px;
+    height: 208px;
+}
+
+#step3 {
+    width: 261px;
+    height: 208px;
+}
+
+.whiteBox {
+    border-color: black;
+}
