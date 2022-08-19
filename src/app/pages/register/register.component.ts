@@ -43,8 +43,25 @@ export class RegisterComponent implements OnInit {
       return;
     }
 
+    //check length of username
+    if (username.trim().length < 5) {
+      alert('Your username should have at least 5 characters');
+      return;
+    }
+
+    //check length of password
+    if (password.trim().length < 6) {
+      alert('Your password should have at least 6 characters');
+      return;
+    }
+
+    //validate email address
+    if (!this.validateEmail(email)) {
+      alert('Please input a valid email');
+      return;
+    }
+
     const registerUser: User = {
-      id: '',
       username,
       password,
       email,
@@ -63,5 +80,9 @@ export class RegisterComponent implements OnInit {
         alert(msg);
       }
     );
+  }
+
+  private validateEmail(email: string): boolean {
+    return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email);
   }
 }
