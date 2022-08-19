@@ -29,8 +29,8 @@
                     <ng-template #notTF><option value="T_F">True or False</option></ng-template>
                     <option value="OPTIONS" *ngIf="q.questionType === 'OPTIONS'; else notOption" selected>Options</option>
                     <ng-template #notOption><option value="OPTIONS">Options</option></ng-template>
-                    <option value="CHECKBOX" *ngIf="q.questionType === 'CHECKBOX'; else notTF" selected>Checkboxes</option>
-                    <ng-template #notTF><option value="CHECKBOX">Checkboxes</option></ng-template>
+                    <option value="CHECKBOX" *ngIf="q.questionType === 'CHECKBOX'; else notCheckbox" selected>Checkboxes</option>
+                    <ng-template #notCheckbox><option value="CHECKBOX">Checkboxes</option></ng-template>
                 </select>
 
             </div>
